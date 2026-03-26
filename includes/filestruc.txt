@@ -1,0 +1,14 @@
+c:/xampp1/htdocs/kim/
+├── .hintrc
+├── assets/
+│   ├── css/
+│   │   └── style.css
+│   ├── images/
+│   └── js/
+│       └── main.js
+├── backend/
+├── includes/
+│   ├── config.php
+│   ├── footer.php
+│   └── header.php
+└── index.php

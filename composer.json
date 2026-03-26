@@ -1,0 +1,13 @@
+{
+  "name": "kimathi/systems",
+  "description": "Kimathi Rukunga - Digital Consultancy Platform",
+  "type": "project",
+  "require": {
+    "phpmailer/phpmailer": "^6.8"
+  },
+  "config": {
+    "platform": {
+      "php": "8.2"
+    }
+  }
+}

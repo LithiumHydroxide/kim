@@ -1,0 +1,22 @@
+# render.yaml
+services:
+  - type: web
+    name: kimathi-Rukunga
+    env: php
+    region: oregon  # or frankfurt, singapore, etc.
+    branch: main
+    buildCommand: ""
+    startCommand: "php -S 0.0.0.0:$PORT -t ./"
+    envVars:
+      - key: PORT
+        value: 10000
+      - key: SMTP_HOST
+        sync: false  # Set in Render dashboard
+      - key: SMTP_USER
+        sync: false
+      - key: SMTP_PASS
+        sync: false
+      - key: SITE_EMAIL
+        sync: false
+    healthCheckPath: /index.php
+    autoDeploy: true
