@@ -1,22 +1,17 @@
-# render.yaml
 services:
   - type: web
-    name: kimathi-Rukunga
-    env: php
-    region: oregon  # or frankfurt, singapore, etc.
+    name: kimathi-systems
+    env: docker
+    region: oregon
     branch: main
-    buildCommand: ""
-    startCommand: "php -S 0.0.0.0:$PORT -t ./"
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /index.php
     envVars:
-      - key: PORT
-        value: 10000
       - key: SMTP_HOST
-        sync: false  # Set in Render dashboard
+        sync: false
       - key: SMTP_USER
         sync: false
       - key: SMTP_PASS
         sync: false
       - key: SITE_EMAIL
         sync: false
-    healthCheckPath: /index.php
-    autoDeploy: true
