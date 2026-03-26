@@ -131,6 +131,92 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // ===== TESTIMONIAL AUTO-SCROLL =====
+    const testimonialSlider = document.querySelector('[data-testimonial-slider]');
+    if (testimonialSlider) {
+        const cards = Array.from(testimonialSlider.querySelectorAll('.testimonial-card'));
+        const dots = Array.from(testimonialSlider.querySelectorAll('.testimonial-dot'));
+        const prevBtn = testimonialSlider.querySelector('[data-testimonial-prev]');
+        const nextBtn = testimonialSlider.querySelector('[data-testimonial-next]');
+        const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        let activeIndex = 0;
+        let intervalId = null;
+
+        const showCard = (index) => {
+            cards.forEach((card, cardIndex) => {
+                card.classList.toggle('is-active', cardIndex === index);
+                card.setAttribute('aria-hidden', cardIndex === index ? 'false' : 'true');
+            });
+            dots.forEach((dot, dotIndex) => {
+                dot.classList.toggle('is-active', dotIndex === index);
+            });
+        };
+
+        const showIndex = (index) => {
+            activeIndex = ((index % cards.length) + cards.length) % cards.length;
+            showCard(activeIndex);
+        };
+
+        const nextCard = () => {
+            showIndex(activeIndex + 1);
+        };
+
+        const prevCard = () => {
+            showIndex(activeIndex - 1);
+        };
+
+        const startRotation = () => {
+            if (reducedMotion || cards.length < 2 || intervalId) {
+                return;
+            }
+
+            intervalId = window.setInterval(() => {
+                nextCard();
+            }, 5000);
+        };
+
+        const stopRotation = () => {
+            if (intervalId) {
+                window.clearInterval(intervalId);
+                intervalId = null;
+            }
+        };
+
+        showCard(activeIndex);
+        startRotation();
+
+        testimonialSlider.addEventListener('mouseenter', stopRotation);
+        testimonialSlider.addEventListener('mouseleave', startRotation);
+        testimonialSlider.addEventListener('focusin', stopRotation);
+        testimonialSlider.addEventListener('focusout', startRotation);
+
+        // Navigation buttons
+        if (prevBtn) {
+            prevBtn.addEventListener('click', () => {
+                prevCard();
+                stopRotation();
+                startRotation();
+            });
+        }
+
+        if (nextBtn) {
+            nextBtn.addEventListener('click', () => {
+                nextCard();
+                stopRotation();
+                startRotation();
+            });
+        }
+
+        // Dot navigation
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                showIndex(index);
+                stopRotation();
+                startRotation();
+            });
+        });
+    }
 });
 
 // ===== MOBILE NAVIGATION TOGGLE =====

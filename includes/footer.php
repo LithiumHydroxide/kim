@@ -16,7 +16,7 @@ if (!isset($config)) {
             <div class="footer-content">
                 <div class="footer-brand">
                     <a href="index.php" class="logo footer-logo">
-                        <span class="logo-text">KIMATHI <span class="logo-divider">//</span> SYSTEMS</span>
+                        <span class="logo-text">KIMATHI <span class="logo-divider">//</span> RUKUNGA</span>
                     </a>
                     <p class="footer-tagline">Building efficient digital systems through custom development, automation, and data-driven solutions.</p>
                 </div>
@@ -35,8 +35,8 @@ if (!isset($config)) {
                     <div class="footer-col">
                         <h4>Contact</h4>
                         <ul>
-                            <li><a href="mailto:kimathirukunga001@email.com">kimathirukunga001@email.com</a></li>
-                            <li><a href="https://www.linkedin.com/in/kimathi-rukunga-64b0312a1/" target="_blank">LinkedIn</a></li>
+                            <li><a href="mailto:<?php echo htmlspecialchars($config['email']); ?>"><?php echo htmlspecialchars($config['email']); ?></a></li>
+                            <li><a href="<?php echo htmlspecialchars($config['linkedin']); ?>" target="_blank">LinkedIn</a></li>
                         </ul>
                     </div>
                 </div>

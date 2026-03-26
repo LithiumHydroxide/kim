@@ -26,7 +26,7 @@ include 'includes/header.php';
             </p>
             <div class="cta-group">
                 <a href="projects.php" class="btn btn-primary">View Case Studies</a>
-                <a href="services.php" class="btn btn-secondary">Our Services</a>
+                <a href="services.php" class="btn btn-secondary">My Services</a>
             </div>
         </div>
         <div class="hero-background">
@@ -85,10 +85,7 @@ include 'includes/header.php';
                 <a href="about.php" class="text-link">More about my approach <span class="arrow">→</span></a>
             </div>
             <div class="about-visual">
-                <div class="visual-placeholder">
-                    <span class="visual-icon">⚙️</span>
-                    <p>Strategic Technology Partner</p>
-                </div>
+                <img src="assets/images/kim.jpg" alt="Kimathi Rukunga" class="about-image">
             </div>
         </div>
     </section>
@@ -139,8 +136,8 @@ include 'includes/header.php';
     <!-- 6. THE PROCESS (Timeline) -->
     <section id="process" class="process fade-in-section">
         <div class="container">
-            <h2 class="section-title">Our Process</h2>
-            <p class="section-intro">A structured, collaborative approach to delivering reliable digital solutions.</p>
+            <h2 class="section-title">My Process</h2>
+            <p class="section-intro">A structured, independent approach to delivering reliable digital solutions.</p>
             
             <div class="timeline">
                 <?php foreach($config['process_steps'] as $index => $step): ?>
@@ -173,17 +170,44 @@ include 'includes/header.php';
         </div>
     </section>
 
-    <!-- 8. TESTIMONIAL -->
-    <?php if(!empty($config['testimonial'])): ?>
+    <!-- 8. TESTIMONIALS -->
+    <?php
+    $testimonials = $config['testimonials'] ?? [];
+    if (empty($testimonials) && !empty($config['testimonial'])) {
+        $testimonials = [$config['testimonial']];
+    }
+    ?>
+    <?php if(!empty($testimonials)): ?>
     <section class="testimonial fade-in-section">
         <div class="container">
-            <blockquote class="testimonial-quote">
-                "<?php echo htmlspecialchars($config['testimonial']['text']); ?>"
-            </blockquote>
-            <cite class="testimonial-author">
-                — <?php echo htmlspecialchars($config['testimonial']['name']); ?>, 
-                <span class="author-title"><?php echo htmlspecialchars($config['testimonial']['title']); ?></span>
-            </cite>
+            <div class="testimonial-slider" data-testimonial-slider aria-live="polite">
+                <button class="testimonial-nav testimonial-nav--prev" aria-label="Previous testimonial" data-testimonial-prev>
+                    <span aria-hidden="true">←</span>
+                </button>
+                <div class="testimonial-track">
+                    <?php foreach($testimonials as $index => $testimonial): ?>
+                    <article class="testimonial-card<?php echo $index === 0 ? ' is-active' : ''; ?>">
+                        <blockquote class="testimonial-quote">
+                            "<?php echo htmlspecialchars($testimonial['text']); ?>"
+                        </blockquote>
+                        <cite class="testimonial-author">
+                            &mdash; <?php echo htmlspecialchars($testimonial['name']); ?>
+                            <span class="author-title"><?php echo htmlspecialchars($testimonial['title']); ?></span>
+                        </cite>
+                    </article>
+                    <?php endforeach; ?>
+                </div>
+                <button class="testimonial-nav testimonial-nav--next" aria-label="Next testimonial" data-testimonial-next>
+                    <span aria-hidden="true">→</span>
+                </button>
+                <div class="testimonial-dots" data-testimonial-dots aria-label="Testimonial navigation">
+                    <?php foreach($testimonials as $index => $testimonial): ?>
+                    <button class="testimonial-dot<?php echo $index === 0 ? ' is-active' : ''; ?>" 
+                            aria-label="Go to testimonial <?php echo $index + 1; ?>" 
+                            data-testimonial-dot="<?php echo $index; ?>"></button>
+                    <?php endforeach; ?>
+                </div>
+            </div>
         </div>
     </section>
     <?php endif; ?>
@@ -192,7 +216,7 @@ include 'includes/header.php';
     <section class="final-cta fade-in-section">
         <div class="container">
             <h2>Ready to Transform Your Digital Operations?</h2>
-            <p>Let's discuss how technology can help streamline your workflows, automate processes, and build scalable systems for your organization.</p>
+            <p>Let's discuss how I can help streamline your workflows, automate processes, and build scalable systems for your organization.</p>
             <a href="contact.php" class="btn btn-primary btn-large">Start Your Project</a>
             <p class="cta-note">Free 15-minute consultation • No obligation</p>
         </div>

@@ -13,6 +13,7 @@ if (!isset($pageTitle)) {
 // Get site config if not already loaded
 if (!isset($config)) {
     include __DIR__ . '/config.php';
+}
 
 // Add this after session_start() if not already there
 if(session_status() === PHP_SESSION_NONE) {
@@ -22,7 +23,6 @@ if(session_status() === PHP_SESSION_NONE) {
 // Generate CSRF token if not exists
 if(!isset($_SESSION['csrf_token'])) {
     $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
-}
 }
 ?>
 <!DOCTYPE html>
@@ -187,10 +187,13 @@ if(!isset($_SESSION['csrf_token'])) {
     <link rel="stylesheet" href="assets/css/style.css">
     
     <!-- JavaScript Detection -->
-    <script>
-        document.documentElement.classList.remove('no-js');
-        document.documentElement.classList.add('js');
-    </script>
+    <!-- Add before </head> -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script type="text/javascript">
+    (function() {
+        emailjs.init("YOUR_PUBLIC_KEY");
+    })();
+</script>
 </head>
 <body>
     <!-- Skip Link for Accessibility -->
@@ -201,7 +204,7 @@ if(!isset($_SESSION['csrf_token'])) {
         <div class="container navbar-inner">
             <!-- Logo -->
             <a href="index.php" class="logo" aria-label="Kimathi Rukunga Home">
-                <span class="logo-text">KIMATHI <span class="logo-divider">//</span> SYSTEMS</span>
+                <span class="logo-text">KIMATHI <span class="logo-divider">//</span> RUKUNGA</span>
             </a>
             
             <!-- Desktop Navigation -->

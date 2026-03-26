@@ -32,11 +32,6 @@ require_once __DIR__ . '/../includes/config.php';
 $autoloadPath = __DIR__ . '/../vendor/autoload.php';
 $phpMailerAvailable = false;
 
-$autoloadPath = __DIR__ . '/../vendor/autoload.php';
-if (file_exists($autoloadPath)) {
-    require_once $autoloadPath;
-}
-
 if (file_exists($autoloadPath)) {
     require_once $autoloadPath;
     // Verify PHPMailer class is actually loaded
@@ -268,7 +263,7 @@ if ($mailSent) {
     http_response_code(500);
     echo json_encode([
         'success' => false, 
-        'message' => $errorMessage ?: 'Sorry, there was an error sending your message. Please contact us directly at ' . htmlspecialchars($config['email'])
+        'message' => $errorMessage ?: 'Sorry, there was an error sending your message. Please contact me directly at ' . htmlspecialchars($config['email'])
     ]);
 }
 ?>

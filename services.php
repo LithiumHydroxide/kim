@@ -14,10 +14,10 @@ include 'includes/header.php';
     <!-- Hero Section -->
     <section class="page-hero fade-in-section">
         <div class="container">
-            <p class="page-subtitle">What We Offer</p>
+            <p class="page-subtitle">What I Offer</p>
             <h1 class="page-title">Technology Solutions That Drive Business Growth</h1>
             <p class="page-description">
-                From custom web development to AI-powered automation, we deliver end-to-end digital solutions 
+                From custom web development to AI-powered automation, I deliver end-to-end digital solutions 
                 tailored to your organization's unique challenges and goals.
             </p>
         </div>
@@ -71,7 +71,7 @@ include 'includes/header.php';
     <!-- Process Section -->
     <section class="services-process fade-in-section">
         <div class="container">
-            <h2 class="section-title">Our Working Process</h2>
+            <h2 class="section-title">My Working Process</h2>
             <p class="section-intro">A proven methodology that ensures quality, transparency, and timely delivery.</p>
             
             <div class="process-steps">
@@ -93,8 +93,8 @@ include 'includes/header.php';
     <!-- Technologies Section -->
     <section class="services-tech fade-in-section">
         <div class="container">
-            <h2 class="section-title">Technologies We Master</h2>
-            <p class="section-intro">We use modern, reliable technologies to build scalable solutions.</p>
+            <h2 class="section-title">Technologies I Master</h2>
+            <p class="section-intro">I use modern, reliable technologies to build scalable solutions.</p>
             
             <div class="tech-grid">
                 <?php foreach($config['technologies'] as $tech): ?>
@@ -110,7 +110,7 @@ include 'includes/header.php';
     <section class="services-cta fade-in-section">
         <div class="container">
             <h2>Ready to Discuss Your Project?</h2>
-            <p>Let's explore how our services can help solve your business challenges and drive measurable results.</p>
+            <p>Let's explore how my services can help solve your business challenges and drive measurable results.</p>
             <a href="contact.php" class="btn btn-primary btn-large">Schedule a Consultation</a>
             <p class="cta-note">Free 15-minute consultation • No obligation</p>
         </div>

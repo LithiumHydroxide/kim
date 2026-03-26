@@ -119,85 +119,55 @@ $errorMessage = isset($_GET['error']) ? htmlspecialchars($_GET['error']) : '';
                         </div>
                     <?php endif; ?>
                     
-                    <form action="backend/send-mail.php" method="POST" class="contact-form" id="contactForm" novalidate>
-                        <!-- CSRF Token -->
-                        <input type="hidden" name="csrf_token" value="<?php echo bin2hex(random_bytes(32)); ?>">
-                        
-                        <div class="form-group">
-                            <label for="name">Full Name *</label>
-                            <input type="text" id="name" name="name" required 
-                                   placeholder="John Doe"
-                                   autocomplete="name">
-                            <span class="error-message">Please enter your full name</span>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="email">Email Address *</label>
-                            <input type="email" id="email" name="email" required 
-                                   placeholder="john@company.com"
-                                   autocomplete="email">
-                            <span class="error-message">Please enter a valid email address</span>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="company">Company Name</label>
-                            <input type="text" id="company" name="company" 
-                                   placeholder="Your Company (Optional)"
-                                   autocomplete="organization">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="service">Service Interested In</label>
-                            <select id="service" name="service">
-                                <option value="">Select a service (Optional)</option>
-                                <?php foreach($services as $service): ?>
-                                    <option value="<?php echo htmlspecialchars($service['title']); ?>">
-                                        <?php echo htmlspecialchars($service['title']); ?>
-                                    </option>
-                                <?php endforeach; ?>
-                                <option value="Other">Other / Multiple Services</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="budget">Project Budget</label>
-                            <select id="budget" name="budget">
-                                <option value="">Select budget range (Optional)</option>
-                                <option value="under-5k">Under $5,000</option>
-                                <option value="5k-10k">$5,000 - $10,000</option>
-                                <option value="10k-25k">$10,000 - $25,000</option>
-                                <option value="25k-50k">$25,000 - $50,000</option>
-                                <option value="50k-plus">$50,000+</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="message">Project Details *</label>
-                            <textarea id="message" name="message" required 
-                                      placeholder="Tell me about your project, goals, and timeline..."
-                                      rows="6"></textarea>
-                            <span class="error-message">Please enter your project details (minimum 20 characters)</span>
-                        </div>
-                        
-                        <div class="form-group checkbox-group">
-                            <input type="checkbox" id="consent" name="consent" required>
-                            <label for="consent">I agree to the <a href="privacy.php" target="_blank">Privacy Policy</a> and consent to having this website store my submitted information so they can respond to my inquiry. *</label>
-                            <span class="error-message">You must agree to the privacy policy</span>
-                        </div>
-                        
-                        <button type="submit" class="btn btn-primary btn-large btn-submit">
-                            <span class="btn-text">Send Message</span>
-                            <span class="btn-loading" style="display: none;">Sending...</span>
-                        </button>
-                        
-                        <p class="form-note">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-                                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-                            </svg>
-                            Your information is secure and will never be shared with third parties.
-                        </p>
-                    </form>
+                    <!-- Update the form tag in contact.php -->
+<form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="contact-form" id="contactForm">
+    
+    <div class="form-group">
+        <label for="name">Full Name *</label>
+        <input type="text" id="name" name="name" required placeholder="John Doe">
+    </div>
+    
+    <div class="form-group">
+        <label for="email">Email Address *</label>
+        <input type="email" id="email" name="email" required placeholder="john@company.com">
+    </div>
+    
+    <div class="form-group">
+        <label for="company">Company Name</label>
+        <input type="text" id="company" name="company" placeholder="Your Company (Optional)">
+    </div>
+    
+    <div class="form-group">
+        <label for="service">Service Interested In</label>
+        <select id="service" name="service">
+            <option value="">Select a service (Optional)</option>
+            <?php foreach($services as $service): ?>
+                <option value="<?php echo htmlspecialchars($service['title']); ?>">
+                    <?php echo htmlspecialchars($service['title']); ?>
+                </option>
+            <?php endforeach; ?>
+            <option value="Other">Other / Multiple Services</option>
+        </select>
+    </div>
+    
+    <div class="form-group">
+        <label for="message">Project Details *</label>
+        <textarea id="message" name="message" required placeholder="Tell me about your project..." rows="6"></textarea>
+    </div>
+    
+    <button type="submit" class="btn btn-primary btn-large btn-submit">
+        <span class="btn-text">Send Message</span>
+        <span class="btn-loading" style="display: none;">Sending...</span>
+    </button>
+    
+    <p class="form-note">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+        </svg>
+        Your information is secure and will never be shared with third parties.
+    </p>
+</form>
                 </div>
             </div>
         </div>
@@ -217,7 +187,7 @@ $errorMessage = isset($_GET['error']) ? htmlspecialchars($_GET['error']) : '';
                 
                 <div class="faq-item">
                     <h4>Do you offer free consultations?</h4>
-                    <p>Yes! I offer a free 15-minute consultation to discuss your project requirements and determine if we're a good fit.</p>
+                    <p>Yes! I offer a free 15-minute consultation to discuss your project requirements and determine if I'm a good fit.</p>
                 </div>
                 
                 <div class="faq-item">
@@ -257,41 +227,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const btnText = submitBtn.querySelector('.btn-text');
     const btnLoading = submitBtn.querySelector('.btn-loading');
     
-    // Real-time validation
-    const inputs = form.querySelectorAll('input[required], textarea[required], select[required]');
-    
-    inputs.forEach(input => {
-        input.addEventListener('blur', () => {
-            validateField(input);
-        });
-        
-        input.addEventListener('input', () => {
-            if(input.classList.contains('error')) {
-                validateField(input);
-            }
-        });
-    });
-    
-    // Form submission
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
-        
-        // Validate all fields
-        let isValid = true;
-        inputs.forEach(input => {
-            if(!validateField(input)) {
-                isValid = false;
-            }
-        });
-        
-        if(!isValid) {
-            // Scroll to first error
-            const firstError = form.querySelector('.error');
-            if(firstError) {
-                firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            }
-            return;
-        }
         
         // Show loading state
         submitBtn.disabled = true;
@@ -300,92 +237,41 @@ document.addEventListener('DOMContentLoaded', () => {
         
         try {
             const formData = new FormData(form);
-            const response = await fetch('backend/send-mail.php', {
+            const formAction = form.getAttribute('action');
+            
+            const response = await fetch(formAction, {
                 method: 'POST',
-                body: formData
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
             });
             
-            const result = await response.json();
-            
-            if(response.ok && result.success) {
-                // Success - redirect with success message
-                window.location.href = 'contact.php?success=' + encodeURIComponent('Thank you! Your message has been sent. I will respond within 24 hours.');
+            if(response.ok) {
+                // Success
+                form.reset();
+                btnText.textContent = '✓ Message Sent!';
+                btnText.style.display = 'inline';
+                btnLoading.style.display = 'none';
+                
+                setTimeout(() => {
+                    submitBtn.disabled = false;
+                    btnText.textContent = 'Send Message';
+                }, 3000);
             } else {
-                // Error from server
-                throw new Error(result.message || 'Form submission failed. Please try again.');
+                throw new Error('Form submission failed');
             }
         } catch(error) {
-            // Show error message
-            const errorDiv = document.createElement('div');
-            errorDiv.className = 'form-message error';
-            errorDiv.innerHTML = `
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <circle cx="12" cy="12" r="10"></circle>
-                    <line x1="12" y1="8" x2="12" y2="12"></line>
-                    <line x1="12" y1="16" x2="12.01" y2="16"></line>
-                </svg>
-                <span>${error.message}</span>
-            `;
-            
-            const existingError = form.querySelector('.form-message.error');
-            if(existingError) {
-                existingError.remove();
-            }
-            
-            form.querySelector('h2').insertAdjacentElement('afterend', errorDiv);
-            
-            // Reset button
-            submitBtn.disabled = false;
+            // Error
+            btnText.textContent = 'Try Again';
             btnText.style.display = 'inline';
             btnLoading.style.display = 'none';
+            
+            setTimeout(() => {
+                submitBtn.disabled = false;
+                btnText.textContent = 'Send Message';
+            }, 2000);
         }
     });
-    
-    // Validate individual field
-    function validateField(field) {
-        const value = field.value.trim();
-        const errorSpan = field.parentElement.querySelector('.error-message');
-        let isValid = true;
-        
-        // Remove previous error state
-        field.classList.remove('error');
-        
-        // Check if required
-        if(field.required && !value) {
-            isValid = false;
-        }
-        
-        // Email validation
-        if(field.type === 'email' && value) {
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if(!emailRegex.test(value)) {
-                isValid = false;
-            }
-        }
-        
-        // Message minimum length
-        if(field.id === 'message' && value && value.length < 20) {
-            isValid = false;
-        }
-        
-        // Checkbox validation
-        if(field.type === 'checkbox' && field.required && !field.checked) {
-            isValid = false;
-        }
-        
-        // Show error if invalid
-        if(!isValid) {
-            field.classList.add('error');
-            if(errorSpan) {
-                errorSpan.style.display = 'block';
-            }
-        } else {
-            if(errorSpan) {
-                errorSpan.style.display = 'none';
-            }
-        }
-        
-        return isValid;
-    }
 });
 </script>
