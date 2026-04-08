@@ -184,7 +184,7 @@ if(!isset($_SESSION['csrf_token'])) {
     </style>
     
     <!-- Main Stylesheet -->
-    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     
     <!-- JavaScript Detection -->
     <!-- Add before </head> -->
