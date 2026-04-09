@@ -39,7 +39,7 @@ include 'includes/header.php';
                     <h3>Email</h3>
                     <p>The best way to discuss project details, share documents, and get a written record of our conversation.</p>
                     <a href="mailto:<?php echo htmlspecialchars($config['email']); ?>?subject=Project Inquiry" class="method-btn">
-                        Send Email →
+                        Send Email &rarr;
                     </a>
                     <button class="copy-email-btn" data-email="<?php echo htmlspecialchars($config['email']); ?>">
                         Copy Email Address
@@ -59,7 +59,7 @@ include 'includes/header.php';
                     <h3>Chatbot</h3>
                     <p>Get instant answers to common questions. Our AI assistant is available 24/7 to help you.</p>
                     <a href="#" class="method-btn chatbot-btn">
-                        Start Chat →
+                        Start Chat &rarr;
                     </a>
                 </article>
 
@@ -73,7 +73,7 @@ include 'includes/header.php';
                     <h3>LinkedIn</h3>
                     <p>Connect professionally, view my experience, and send a direct message through LinkedIn.</p>
                     <a href="<?php echo htmlspecialchars($config['linkedin']); ?>" class="method-btn linkedin-btn" target="_blank" rel="noopener noreferrer">
-                        Connect on LinkedIn →
+                        Connect on LinkedIn &rarr;
                     </a>
                 </article>
 
@@ -90,7 +90,7 @@ include 'includes/header.php';
                     <h3>Schedule a Call</h3>
                     <p>Book a free 15-minute consultation at a time that works for you. No back-and-forth emails.</p>
                     <a href="https://calendly.com/your-link" class="method-btn" target="_blank" rel="noopener noreferrer">
-                        Book a Time →
+                        Book a Time &rarr;
                     </a>
                     <p class="method-note">Replace with your Calendly link (free tier available)</p>
                 </article>

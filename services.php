@@ -32,7 +32,7 @@ include 'includes/header.php';
                         <div class="service-header">
                             <span class="service-number"><?php echo str_pad($index + 1, 2, '0', STR_PAD_LEFT); ?></span>
                             <div class="service-icon-large">
-                                <?php echo htmlspecialchars($service['icon']); ?>
+                                <?php echo $service['icon']; ?>
                             </div>
                         </div>
                         <h2 class="service-title"><?php echo htmlspecialchars($service['title']); ?></h2>

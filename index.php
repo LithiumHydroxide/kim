@@ -62,12 +62,12 @@ include 'includes/header.php';
                 <?php foreach($services as $service): ?>
                     <article class="service-card">
                         <div class="service-icon">
-                            <span class="icon-placeholder"><?php echo htmlspecialchars($service['icon']); ?></span>
+                            <span class="icon-placeholder"><?php echo $service['icon']; ?></span>
                         </div>
                         <h3><?php echo htmlspecialchars($service['title']); ?></h3>
                         <p><?php echo htmlspecialchars($service['description']); ?></p>
                         <a href="services.php#<?php echo slugify($service['title']); ?>" class="service-link">
-                            Learn more <span class="arrow">→</span>
+                            Learn more <span class="arrow">&rarr;</span>
                         </a>
                     </article>
                 <?php endforeach; ?>
@@ -81,8 +81,8 @@ include 'includes/header.php';
             <div class="about-content">
                 <h2>Behind the Systems</h2>
                 <p>I'm <strong>Kimathi Rukunga</strong>, a technical consultant and developer focused on building digital infrastructure that solves real business problems. With 5+ years of experience, I partner with organizations to turn complex challenges into efficient, scalable solutions.</p>
-                <p>My approach blends technical expertise with business strategy—ensuring every system I build delivers tangible value, not just clean code.</p>
-                <a href="about.php" class="text-link">More about my approach <span class="arrow">→</span></a>
+                <p>My approach blends technical expertise with business strategy&mdash;ensuring every system I build delivers tangible value, not just clean code.</p>
+                <a href="about.php" class="text-link">More about my approach <span class="arrow">&rarr;</span></a>
             </div>
             <div class="about-visual">
                 <img src="assets/images/kim.jpg" alt="Kimathi Rukunga" class="about-image">

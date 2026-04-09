@@ -17,7 +17,7 @@ include 'includes/header.php';
             <p class="page-subtitle">My Work</p>
             <h1 class="page-title">Real Projects, Real Impact</h1>
             <p class="page-description">
-                Explore systems I've built for businesses, organizations, and communities—each designed to solve 
+                Explore systems I've built for businesses, organizations, and communities&mdash;each designed to solve 
                 specific challenges with clean code, thoughtful architecture, and measurable results.
             </p>
         </div>
@@ -105,11 +105,11 @@ include 'includes/header.php';
                             <div class="project-actions">
                                 <?php if($project['github']): ?>
                                     <a href="<?php echo htmlspecialchars($project['link']); ?>" target="_blank" rel="noopener noreferrer" class="project-link">
-                                        View Code <span class="arrow">→</span>
+                                        View Code <span class="arrow">&rarr;</span>
                                     </a>
                                 <?php else: ?>
                                     <a href="<?php echo htmlspecialchars($project['link']); ?>" class="project-link">
-                                        Learn More <span class="arrow">→</span>
+                                        Learn More <span class="arrow">&rarr;</span>
                                     </a>
                                 <?php endif; ?>
                             </div>
@@ -124,7 +124,7 @@ include 'includes/header.php';
     <section class="projects-cta fade-in-section">
         <div class="container">
             <h2>Need a Similar Solution?</h2>
-            <p>Whether you need a custom management system, payment integration, or AI-powered tool—I can build it with the same attention to quality and results.</p>
+            <p>Whether you need a custom management system, payment integration, or AI-powered tool&mdash;I can build it with the same attention to quality and results.</p>
             <div class="cta-buttons">
                 <a href="contact.php" class="btn btn-primary">Start Your Project</a>
                 <a href="https://github.com/LithiumHydroxide" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">

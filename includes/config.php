@@ -49,29 +49,25 @@ $services = [
     [
         'title' => 'Custom Web Systems',
         'description' => 'Tailored platforms built with PHP/Laravel to automate workflows, manage operations, and improve organizational efficiency.',
-        'icon' => '💻',
-        'slug' => 'custom-web'
-    ],
-    [
-        'title' => 'Technical Consulting',
-        'description' => 'System architecture planning, security audits, and strategic guidance to help you adopt the right technology solutions.',
-        'icon' => '🎯',
-        'slug' => 'consulting'
-    ],
-    [
-        'title' => 'Business Process Automation',
-        'description' => 'Transform manual processes into automated digital workflows—booking systems, payment integration, reporting dashboards.',
-        'icon' => '⚡',
-        'slug' => 'automation'
-    ],
-    [
-        'title' => 'AI & Data Solutions',
-        'description' => 'Python-powered analytics, predictive models, and AI tools that help organizations make data-driven decisions.',
-        'icon' => '🤖',
-        'slug' => 'ai-solutions'
-    ]
-];
-
+            'icon' => '&#x1F4BB;',
+            'slug' => 'custom-web'
+        ],
+        [
+            'title' => 'Technical Consulting',
+            'description' => 'System architecture planning, security audits, and strategic guidance to help you adopt the right technology solutions.',
+            'icon' => '&#x1F3AF;',
+            'slug' => 'consulting'
+        ],
+        [
+            'title' => 'Business Process Automation',
+            'description' => 'Transform manual processes into automated digital workflows&mdash;booking systems, payment integration, reporting dashboards.',
+            'icon' => '&#x26A1;',
+            'slug' => 'automation'
+        ],
+        [
+            'title' => 'AI & Data Solutions',
+            'description' => 'Python-powered analytics, predictive models, and AI tools that help organizations make data-driven decisions.',
+            'icon' => '&#x1F916;',
 // ===== YOUR REAL PROJECTS (From GitHub + Collaborations) =====
 $projects = [
     [
