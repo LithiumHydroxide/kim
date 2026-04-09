@@ -9,5 +9,15 @@
     "not edge <= 124",
     "not opera <= 109",
     "not samsung <= 24"
-  ]
+  ],
+  "hints": {
+    "compat-api/css": [
+      "default",
+      {
+        "ignore": [
+          "backdrop-filter"
+        ]
+      }
+    ]
+  }
 }

@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+    <!-- Character Encoding & Viewport -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- Page Title & SEO -->
+    <title>Home | Kimathi Rukunga</title>
+    <meta name="description" content="Kimathi Rukunga builds scalable web platforms, automation tools, and data-driven solutions for modern businesses.">
+    <meta name="author" content="Kimathi Rukunga">
+    
+    <!-- Favicon (Optional - comment out if file doesn't exist yet) -->
+    <!-- <link rel="icon" type="image/x-icon" href="favicon.ico"> -->
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Critical CSS Inline (Prevents flash of unstyled content) -->
+    <style>
+        :root{
+            --bg-primary:#0a0e17;
+            --text-primary:#f9fafb;
+            --text-secondary:#9ca3af;
+            --accent:#3b82f6;
+            --border:#374151;
+        }
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{
+            font-family:'Inter',system-ui,sans-serif;
+            background:var(--bg-primary);
+            color:var(--text-primary);
+            line-height:1.6;
+            -webkit-font-smoothing:antialiased;
+        }
+        .navbar{
+            position:sticky;
+            top:0;
+            z-index:1000;
+            background:rgba(10,14,23,0.9);
+            backdrop-filter:blur(12px);
+            border-bottom:1px solid var(--border);
+        }
+        .container{
+            width:100%;
+            max-width:1200px;
+            margin:0 auto;
+            padding:0 2rem;
+        }
+        .navbar-inner{
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+            padding:1rem 2rem;
+        }
+        .logo{
+            text-decoration:none;
+            font-weight:700;
+            font-size:1.25rem;
+            color:var(--text-primary);
+        }
+        .logo-divider{color:var(--accent);}
+        .nav-list{
+            display:flex;
+            list-style:none;
+            gap:2rem;
+        }
+        .nav-link{
+            color:var(--text-secondary);
+            text-decoration:none;
+            font-weight:500;
+            transition:color 0.3s ease;
+        }
+        .nav-link:hover{color:var(--text-primary);}
+        .btn{
+            display:inline-flex;
+            align-items:center;
+            padding:0.75rem 1.5rem;
+            border-radius:0.5rem;
+            font-weight:500;
+            text-decoration:none;
+            transition:all 0.3s ease;
+            cursor:pointer;
+            border:none;
+        }
+        .btn-primary{
+            background:var(--accent);
+            color:white;
+        }
+        .btn-primary:hover{
+            background:#2563eb;
+            transform:translateY(-2px);
+        }
+        .mobile-toggle{
+            display:none;
+            background:none;
+            border:none;
+            cursor:pointer;
+            padding:0.5rem;
+        }
+        .hamburger,
+        .hamburger::before,
+        .hamburger::after{
+            display:block;
+            width:24px;
+            height:2px;
+            background:var(--text-primary);
+            position:relative;
+            transition:all 0.3s ease;
+        }
+        .hamburger::before,
+        .hamburger::after{
+            content:'';
+            position:absolute;
+            left:0;
+        }
+        .hamburger::before{top:-8px;}
+        .hamburger::after{top:8px;}
+        .nav-mobile{
+            display:none;
+            position:absolute;
+            top:100%;
+            left:0;
+            right:0;
+            background:var(--bg-primary);
+            border-bottom:1px solid var(--border);
+            padding:1rem 2rem;
+        }
+        .nav-mobile.is-active{display:block;}
+        .nav-mobile-list{
+            list-style:none;
+            display:flex;
+            flex-direction:column;
+            gap:1rem;
+        }
+        .nav-mobile-link{
+            color:var(--text-primary);
+            text-decoration:none;
+            display:block;
+            padding:0.5rem 0;
+        }
+        /* Skip Link for Accessibility */
+        .skip-link{
+            position:absolute;
+            top:-40px;
+            left:0;
+            background:var(--accent);
+            color:white;
+            padding:0.75rem 1.5rem;
+            z-index:2000;
+            text-decoration:none;
+        }
+        .skip-link:focus{top:0;}
+    </style>
+    
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <!-- JavaScript Detection -->
+    <!-- Add before </head> -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script type="text/javascript">
+    (function() {
+        emailjs.init("YOUR_PUBLIC_KEY");
+    })();
+</script>
+</head>
+<body>
+    <!-- Skip Link for Accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- Sticky Navigation Bar -->
+    <header class="navbar" role="banner">
+        <div class="container navbar-inner">
+            <!-- Logo -->
+            <a href="index.html" class="logo" aria-label="Kimathi Rukunga Home">
+                <span class="logo-text">KIMATHI <span class="logo-divider">//</span> RUKUNGA</span>
+            </a>
+            
+            <!-- Desktop Navigation -->
+            <nav class="nav-desktop" role="navigation" aria-label="Primary">
+                <ul class="nav-list">
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="projects.html" class="nav-link">Work</a></li>
+                    <li><a href="index.html#process" class="nav-link">Process</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <!-- Primary CTA -->
+            <a href="contact.html" class="btn btn-primary btn-nav">Start a Project</a>
+            
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span class="hamburger"></span>
+            </button>
+        </div>
+        
+        <!-- Mobile Navigation (Hidden by default) -->
+        <nav class="nav-mobile" role="navigation" aria-label="Mobile" hidden>
+            <ul class="nav-mobile-list">
+                <li><a href="services.html" class="nav-mobile-link">Services</a></li>
+                <li><a href="projects.html" class="nav-mobile-link">Work</a></li>
+                <li><a href="index.html#process" class="nav-mobile-link">Process</a></li>
+                <li><a href="contact.html" class="nav-mobile-link">Contact</a></li>
+                <li><a href="contact.html" class="btn btn-primary" style="width:100%;justify-content:center;">Start a Project</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <!-- Main Content Wrapper -->
+    <main id="main-content" tabindex="-1">
+<main class="homepage">
+
+    <!-- 1. HERO SECTION -->
+    <section class="hero fade-in-section">
+        <div class="hero-content">
+            <p class="positioning-statement">
+                Helping businesses build efficient digital systems through custom development, automation, and data-driven solutions.
+            </p>
+            <h1 class="hero-headline">Scalable Digital Systems for Modern Businesses</h1>
+            <p class="hero-subheadline">
+                I design and develop secure web platforms, automation tools, and data-driven systems that help businesses streamline operations, improve efficiency, and scale with confidence.
+            </p>
+            <div class="cta-group">
+                <a href="projects.html" class="btn btn-primary">View Case Studies</a>
+                <a href="services.html" class="btn btn-secondary">My Services</a>
+            </div>
+        </div>
+        <div class="hero-background">
+            <div class="gradient-mesh"></div>
+        </div>
+    </section>
+
+    <!-- 2. TRUST BAR - Technologies -->
+    <section class="trust-bar fade-in-section">
+        <div class="container">
+            <p class="trust-heading">Technologies I Use to Build Reliable Systems</p>
+            <div class="tech-marquee">
+                <div class="tech-track">
+                                            <span class="tech-item">PHP</span>
+                                            <span class="tech-item">Laravel</span>
+                                            <span class="tech-item">Python</span>
+                                            <span class="tech-item">JavaScript</span>
+                                            <span class="tech-item">Vue.js</span>
+                                            <span class="tech-item">MySQL</span>
+                                            <span class="tech-item">PostgreSQL</span>
+                                            <span class="tech-item">M-Pesa API</span>
+                                            <span class="tech-item">Git</span>
+                                            <span class="tech-item">Linux</span>
+                                        <!-- Duplicate for seamless scroll -->
+                                            <span class="tech-item">PHP</span>
+                                            <span class="tech-item">Laravel</span>
+                                            <span class="tech-item">Python</span>
+                                            <span class="tech-item">JavaScript</span>
+                                            <span class="tech-item">Vue.js</span>
+                                            <span class="tech-item">MySQL</span>
+                                            <span class="tech-item">PostgreSQL</span>
+                                            <span class="tech-item">M-Pesa API</span>
+                                            <span class="tech-item">Git</span>
+                                            <span class="tech-item">Linux</span>
+                                    </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. CORE SERVICES (PHP Loop from config.html) -->
+    <section class="services fade-in-section">
+        <div class="container">
+            <h2 class="section-title">Core Services</h2>
+            <p class="section-intro">Strategic technology solutions designed to solve business challenges and drive measurable outcomes.</p>
+            
+            <div class="services-grid">
+                                    <article class="service-card">
+                        <div class="service-icon">
+                            <span class="icon-placeholder">���+</span>
+                        </div>
+                        <h3>Custom Web Systems</h3>
+                        <p>Tailored platforms built with PHP/Laravel to automate workflows, manage operations, and improve organizational efficiency.</p>
+                        <a href="services.html#custom-web-systems" class="service-link">
+                            Learn more <span class="arrow">���</span>
+                        </a>
+                    </article>
+                                    <article class="service-card">
+                        <div class="service-icon">
+                            <span class="icon-placeholder">��Ļ</span>
+                        </div>
+                        <h3>Technical Consulting</h3>
+                        <p>System architecture planning, security audits, and strategic guidance to help you adopt the right technology solutions.</p>
+                        <a href="services.html#technical-consulting" class="service-link">
+                            Learn more <span class="arrow">���</span>
+                        </a>
+                    </article>
+                                    <article class="service-card">
+                        <div class="service-icon">
+                            <span class="icon-placeholder">���</span>
+                        </div>
+                        <h3>Business Process Automation</h3>
+                        <p>Transform manual processes into automated digital workflows���booking systems, payment integration, reporting dashboards.</p>
+                        <a href="services.html#business-process-automation" class="service-link">
+                            Learn more <span class="arrow">���</span>
+                        </a>
+                    </article>
+                                    <article class="service-card">
+                        <div class="service-icon">
+                            <span class="icon-placeholder">����</span>
+                        </div>
+                        <h3>AI &amp; Data Solutions</h3>
+                        <p>Python-powered analytics, predictive models, and AI tools that help organizations make data-driven decisions.</p>
+                        <a href="services.html#ai-data-solutions" class="service-link">
+                            Learn more <span class="arrow">���</span>
+                        </a>
+                    </article>
+                            </div>
+        </div>
+    </section>
+
+    <!-- 4. MINI ABOUT SECTION -->
+    <section class="about-mini fade-in-section">
+        <div class="container about-grid">
+            <div class="about-content">
+                <h2>Behind the Systems</h2>
+                <p>I'm <strong>Kimathi Rukunga</strong>, a technical consultant and developer focused on building digital infrastructure that solves real business problems. With 5+ years of experience, I partner with organizations to turn complex challenges into efficient, scalable solutions.</p>
+                <p>My approach blends technical expertise with business strategy���ensuring every system I build delivers tangible value, not just clean code.</p>
+                <a href="about.html" class="text-link">More about my approach <span class="arrow">���</span></a>
+            </div>
+            <div class="about-visual">
+                <img src="assets/images/kim.jpg" alt="Kimathi Rukunga" class="about-image">
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. FEATURED CASE STUDIES -->
+    <section class="case-studies fade-in-section">
+        <div class="container">
+            <h2 class="section-title">Selected Case Studies</h2>
+            <p class="section-intro">Real-world solutions delivering measurable business impact.</p>
+            
+            <div class="projects-grid">
+                                    <article class="project-card">
+                        <div class="project-image">
+                            <img src="assets/images/karembo.png" 
+                                 alt="Salon Management" 
+                                 loading="lazy"
+                                 width="600" height="400">
+                            <div class="project-overlay">
+                                <a href="https://github.com/LithiumHydroxide/Salon-management-system" class="btn btn-sm">View Study</a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-tags">
+                                                                    <span class="tag">PHP</span>
+                                                                    <span class="tag">MySQL</span>
+                                                                    <span class="tag">Booking System</span>
+                                                                    <span class="tag">Reports</span>
+                                                            </div>
+                            <h3>Salon Management</h3>
+                            <p class="project-desc">A comprehensive management platform where clients can book sessions, staff can manage schedules, and administrators can track transactions and generate business reports.</p>
+                            <p class="project-impact">
+                                <strong>Business Impact:</strong> Reduced manual booking errors by 90% and provided real-time revenue insights for better business decisions.                            </p>
+                            <a href="https://github.com/LithiumHydroxide/Salon-management-system" class="project-link">
+                                Read full case study <span class="arrow">���</span>
+                            </a>
+                        </div>
+                    </article>
+                                    <article class="project-card">
+                        <div class="project-image">
+                            <img src="assets/images/child.png" 
+                                 alt="Child Development" 
+                                 loading="lazy"
+                                 width="600" height="400">
+                            <div class="project-overlay">
+                                <a href="https://github.com/LithiumHydroxide/Early-Childhood-Development-predictor" class="btn btn-sm">View Study</a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-tags">
+                                                                    <span class="tag">Python</span>
+                                                                    <span class="tag">Machine Learning</span>
+                                                                    <span class="tag">Healthcare</span>
+                                                                    <span class="tag">AI</span>
+                                                            </div>
+                            <h3>Child Development</h3>
+                            <p class="project-desc">An AI-powered tool that analyzes developmental indicators to detect early signs of mental health conditions in children, supporting early intervention.</p>
+                            <p class="project-impact">
+                                <strong>Business Impact:</strong> Provides healthcare workers with a data-driven screening tool to identify at-risk children sooner.                            </p>
+                            <a href="https://github.com/LithiumHydroxide/Early-Childhood-Development-predictor" class="project-link">
+                                Read full case study <span class="arrow">���</span>
+                            </a>
+                        </div>
+                    </article>
+                                    <article class="project-card">
+                        <div class="project-image">
+                            <img src="assets/images/cyber.png" 
+                                 alt="Cyberguard" 
+                                 loading="lazy"
+                                 width="600" height="400">
+                            <div class="project-overlay">
+                                <a href="https://github.com/LithiumHydroxide/Cyber-Guard-AI" class="btn btn-sm">View Study</a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-tags">
+                                                                    <span class="tag">Python</span>
+                                                                    <span class="tag">Cybersecurity</span>
+                                                                    <span class="tag">AI</span>
+                                                                    <span class="tag">Threat Detection</span>
+                                                            </div>
+                            <h3>Cyberguard</h3>
+                            <p class="project-desc">An AI-driven security tool that analyzes network patterns and user behavior to detect and alert on potential cybersecurity threats in real-time.</p>
+                            <p class="project-impact">
+                                <strong>Business Impact:</strong> Helps organizations identify suspicious activity before breaches occur, strengthening their security posture.                            </p>
+                            <a href="https://github.com/LithiumHydroxide/Cyber-Guard-AI" class="project-link">
+                                Read full case study <span class="arrow">���</span>
+                            </a>
+                        </div>
+                    </article>
+                                    <article class="project-card">
+                        <div class="project-image">
+                            <img src="assets/images/sport.png" 
+                                 alt="Sport Management" 
+                                 loading="lazy"
+                                 width="600" height="400">
+                            <div class="project-overlay">
+                                <a href="https://github.com/LithiumHydroxide/sport" class="btn btn-sm">View Study</a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-tags">
+                                                                    <span class="tag">PHP</span>
+                                                                    <span class="tag">MySQL</span>
+                                                                    <span class="tag">Event Management</span>
+                                                                    <span class="tag">Seat Selection</span>
+                                                            </div>
+                            <h3>Sport Management</h3>
+                            <p class="project-desc">A match ticketing system that allows fans to browse events, select seats interactively, and complete secure bookings with real-time availability updates.</p>
+                            <p class="project-impact">
+                                <strong>Business Impact:</strong> Enabled seamless ticket sales for local sports events with zero double-booking incidents.                            </p>
+                            <a href="https://github.com/LithiumHydroxide/sport" class="project-link">
+                                Read full case study <span class="arrow">���</span>
+                            </a>
+                        </div>
+                    </article>
+                                    <article class="project-card">
+                        <div class="project-image">
+                            <img src="assets/images/skool.png" 
+                                 alt="School Management" 
+                                 loading="lazy"
+                                 width="600" height="400">
+                            <div class="project-overlay">
+                                <a href="contact.html?project=school-system" class="btn btn-sm">View Study</a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-tags">
+                                                                    <span class="tag">PHP</span>
+                                                                    <span class="tag">Laravel</span>
+                                                                    <span class="tag">MySQL</span>
+                                                                    <span class="tag">Education</span>
+                                                            </div>
+                            <h3>School Management</h3>
+                            <p class="project-desc">A full-featured school administration platform managing student records, attendance, grades, fee payments, and parent-teacher communication.</p>
+                            <p class="project-impact">
+                                <strong>Business Impact:</strong> Digitized administrative workflows for schools, reducing paperwork by 70% and improving data accuracy.                            </p>
+                            <a href="contact.html?project=school-system" class="project-link">
+                                Read full case study <span class="arrow">���</span>
+                            </a>
+                        </div>
+                    </article>
+                                    <article class="project-card">
+                        <div class="project-image">
+                            <img src="assets/images/mpesa.jpg" 
+                                 alt="Mpesa STK" 
+                                 loading="lazy"
+                                 width="600" height="400">
+                            <div class="project-overlay">
+                                <a href="https://github.com/LithiumHydroxide/Mpesa-STK" class="btn btn-sm">View Study</a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-tags">
+                                                                    <span class="tag">PHP</span>
+                                                                    <span class="tag">M-Pesa API</span>
+                                                                    <span class="tag">Payment Gateway</span>
+                                                                    <span class="tag">Kenya</span>
+                                                            </div>
+                            <h3>Mpesa STK</h3>
+                            <p class="project-desc">A lightweight PHP library for integrating Safaricom&#039;s M-Pesa STK Push functionality into web applications, enabling seamless mobile money payments.</p>
+                            <p class="project-impact">
+                                <strong>Business Impact:</strong> Simplified payment integration for Kenyan businesses, reducing development time from days to hours.                            </p>
+                            <a href="https://github.com/LithiumHydroxide/Mpesa-STK" class="project-link">
+                                Read full case study <span class="arrow">���</span>
+                            </a>
+                        </div>
+                    </article>
+                            </div>
+            
+            <div class="projects-cta">
+                <a href="projects.html" class="btn btn-outline">View All Projects</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. THE PROCESS (Timeline) -->
+    <section id="process" class="process fade-in-section">
+        <div class="container">
+            <h2 class="section-title">My Process</h2>
+            <p class="section-intro">A structured, independent approach to delivering reliable digital solutions.</p>
+            
+            <div class="timeline">
+                                    <div class="timeline-item">
+                        <span class="step-number">01</span>
+                        <div class="timeline-content">
+                            <h3>Discovery</h3>
+                            <p>Understanding your challenges, goals, and operational requirements through detailed consultation.</p>
+                        </div>
+                    </div>
+                                    <div class="timeline-item">
+                        <span class="step-number">02</span>
+                        <div class="timeline-content">
+                            <h3>Strategy</h3>
+                            <p>Designing system architecture and a technology roadmap aligned with your business objectives.</p>
+                        </div>
+                    </div>
+                                    <div class="timeline-item">
+                        <span class="step-number">03</span>
+                        <div class="timeline-content">
+                            <h3>Development</h3>
+                            <p>Building secure, scalable solutions using modern frameworks and best practices.</p>
+                        </div>
+                    </div>
+                                    <div class="timeline-item">
+                        <span class="step-number">04</span>
+                        <div class="timeline-content">
+                            <h3>Launch &amp; Support</h3>
+                            <p>Deploying your solution with documentation, training, and ongoing technical support.</p>
+                        </div>
+                    </div>
+                            </div>
+        </div>
+    </section>
+
+    <!-- 7. KEY METRICS -->
+    <section class="metrics fade-in-section">
+        <div class="container metrics-grid">
+                            <div class="metric-card">
+                    <div class="metric-value">
+                        <span class="count" data-target="5">0</span>
+                                                    <span class="suffix">+</span>
+                                            </div>
+                    <p class="metric-label">Years Technical Experience</p>
+                </div>
+                            <div class="metric-card">
+                    <div class="metric-value">
+                        <span class="count" data-target="8">0</span>
+                                                    <span class="suffix">+</span>
+                                            </div>
+                    <p class="metric-label">Production Systems Deployed</p>
+                </div>
+                            <div class="metric-card">
+                    <div class="metric-value">
+                        <span class="count" data-target="100">0</span>
+                                                    <span class="suffix">%</span>
+                                            </div>
+                    <p class="metric-label">Client Satisfaction</p>
+                </div>
+                            <div class="metric-card">
+                    <div class="metric-value">
+                        <span class="count" data-target="24">0</span>
+                                                    <span class="suffix">h</span>
+                                            </div>
+                    <p class="metric-label">Average Response Time</p>
+                </div>
+                    </div>
+    </section>
+
+    <!-- 8. TESTIMONIALS -->
+            <section class="testimonial fade-in-section">
+        <div class="container">
+            <div class="testimonial-slider" data-testimonial-slider aria-live="polite">
+                <button class="testimonial-nav testimonial-nav--prev" aria-label="Previous testimonial" data-testimonial-prev>
+                    <span aria-hidden="true">���</span>
+                </button>
+                <div class="testimonial-track">
+                                        <article class="testimonial-card is-active">
+                        <blockquote class="testimonial-quote">
+                            "The Threeft platform stands out for its clean, intuitive interface. Navigating through products feels seamless, and the layout makes it easy for users to find exactly what they need without friction."
+                        </blockquote>
+                        <cite class="testimonial-author">
+                            &mdash; Happyton Mbaka                            <span class="author-title">CEO, Threeft Pay</span>
+                        </cite>
+                    </article>
+                                        <article class="testimonial-card">
+                        <blockquote class="testimonial-quote">
+                            "Kimathi delivered a salon management system that streamlined our bookings and reporting. Professional, responsive, and technically excellent."
+                        </blockquote>
+                        <cite class="testimonial-author">
+                            &mdash; Karembo Salon Owner                            <span class="author-title">Nairobi, Kenya</span>
+                        </cite>
+                    </article>
+                                    </div>
+                <button class="testimonial-nav testimonial-nav--next" aria-label="Next testimonial" data-testimonial-next>
+                    <span aria-hidden="true">���</span>
+                </button>
+                <div class="testimonial-dots" data-testimonial-dots aria-label="Testimonial navigation">
+                                        <button class="testimonial-dot is-active" 
+                            aria-label="Go to testimonial 1" 
+                            data-testimonial-dot="0"></button>
+                                        <button class="testimonial-dot" 
+                            aria-label="Go to testimonial 2" 
+                            data-testimonial-dot="1"></button>
+                                    </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 9. FINAL CTA -->
+    <section class="final-cta fade-in-section">
+        <div class="container">
+            <h2>Ready to Transform Your Digital Operations?</h2>
+            <p>Let's discuss how I can help streamline your workflows, automate processes, and build scalable systems for your organization.</p>
+            <a href="contact.html" class="btn btn-primary btn-large">Start Your Project</a>
+            <p class="cta-note">Free 15-minute consultation ��� No obligation</p>
+        </div>
+    </section>
+
+</main>
+
+    </main> <!-- End #main-content -->
+    
+    <!-- Footer Section -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo footer-logo">
+                        <span class="logo-text">KIMATHI <span class="logo-divider">//</span> RUKUNGA</span>
+                    </a>
+                    <p class="footer-tagline">Building efficient digital systems through custom development, automation, and data-driven solutions.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-col">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="services.html">Services</a></li>
+                            <li><a href="projects.html">Work</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h4>Contact</h4>
+                        <ul>
+                            <li><a href="mailto:kimathirukunga001@gmail.com">kimathirukunga001@gmail.com</a></li>
+                            <li><a href="https://linkedin.com/in/kimathi-rukunga-294b72308" target="_blank">LinkedIn</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Kimathi Rukunga. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- JavaScript File -->
+    <script src="assets/js/main.js" defer></script>
+</body>
+</html>
